@@ -1,6 +1,7 @@
 
 import "./globals.css";
 import { FoodProvider } from "../context/FoodContext";
+import RoleGuard from "../components/RoleGuard";
 
 export const metadata = {
   title: "FoodtoGood",
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <FoodProvider>
-          {children}
+          <RoleGuard>
+            {children}
+          </RoleGuard>
         </FoodProvider>
       </body>
     </html>
